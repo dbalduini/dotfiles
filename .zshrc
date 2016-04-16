@@ -62,22 +62,10 @@ plugins=(git)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# Diego - Env
-export PHANTONJS_HOME="/Users/dbalduini/Applications/phantomjs-2.0.0-macosx"
-export PHANTOM_BIN=$PHANTONJS_HOME/bin/phantomjs
-# Define PACKAGE_DIRS for Local Meteor Packages
-export PACKAGE_DIRS="$HOME/.meteor/packages"
-
-export SCALA_HOME="/usr/local/Cellar/scala/2.11.7"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export GRADLE_HOME="/Users/dbalduini/Applications/gradle-2.10"
-
-export PATH=$PATH:$PHANTONJS_HOME/bin:$GRADLE_HOME/bin
-
 source $ZSH/oh-my-zsh.sh
 
 source ~/.my_alias
-
+source ~/.bash_profile
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
