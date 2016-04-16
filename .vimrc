@@ -31,10 +31,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " ========================================================================
-" Plugin setup
+" Syntax
 " ========================================================================
 
-"  Syntax
 syntax on
 set background=dark
 colorscheme solarized
@@ -46,6 +45,10 @@ set term=xterm-256color
 set termencoding=utf-8
 
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+" ========================================================================
+" Plugin setup
+" ========================================================================
 
 " Nerdtree
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -89,8 +92,6 @@ let g:syntastic_javascript_checkers=['jshint', 'jscs']
 " Config
 " ========================================================================
 
-" change the mapleader from \ to ,
-let mapleader=","
 " show line number
 set number
 " show the cursor position all the time
@@ -114,10 +115,13 @@ set nowrap
 set hlsearch
 " show search matches as you type
 set incsearch
-set noswapfile
+
 " ========================================================================
 " Map Keys
 " ========================================================================
+
+" change the mapleader from \ to ,
+let mapleader=","
 
 " Easy window navigation
 map <C-h> <C-w>h
