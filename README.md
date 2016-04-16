@@ -22,6 +22,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ## Config git
 
-``
+```
 git config --global core.excludesfile ~/.gitignore_global
 ```
