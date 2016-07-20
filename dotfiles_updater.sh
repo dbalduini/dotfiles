@@ -3,7 +3,7 @@
 
 while read input
 do
-  echo "Checking dotfile $input..."
+  echo "\nChecking dotfile $input..."
   if [ ! -f "$input" ]
   then
     echo "Copying new dotfile $input..."
@@ -21,5 +21,4 @@ do
     cp ~/$input .
     echo "Replace done!"
   fi
-  echo "\n"
 done <dotfiles.txt

@@ -24,7 +24,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
 " Colors
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -35,8 +35,8 @@ filetype plugin indent on    " required
 " ========================================================================
 
 syntax on
-set background=dark
-colorscheme solarized
+" set background=dark
+colorscheme dracula
 
 set encoding=utf-8
 set t_Co=256
@@ -86,7 +86,7 @@ let g:syntastic_check_on_open = 0
 " aggregate list of checkers
 let g:syntastic_aggregate_errors = 1
 " enable js linters
-let g:syntastic_javascript_checkers=['jshint', 'jscs']
+" let g:syntastic_javascript_checkers=['jshint', 'jscs']
 
 " ========================================================================
 " Config
