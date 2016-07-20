@@ -1,0 +1,5 @@
+.bash_profile
+.my_alias
+.gitignore_global
+.vimrc
+.zshrc
