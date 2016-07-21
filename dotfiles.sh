@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh 
+#!/usr/bin/env zsh
 
 # FLAGS
 FLAG_INSTALL=false
@@ -7,6 +7,7 @@ FLAG_FORCE=false
 
 # FUNCTIONS
 Replace () {
+  echo
   read -q "RESP?Do you want to replace $1? [y/N]"
   if [[ "$RESP" == 'y' ]]
   then
@@ -14,6 +15,34 @@ Replace () {
     echo "\nFile replaced!"
   else
     echo "\nFile NOT replaced!"
+  fi
+}
+
+AddNew() {
+  echo "Checking dotfile $input"
+  if [ ! -f "$input" ]; then
+    echo "Adding new dotfile $input"
+    cp ~/$input .
+    echo "File sucessfully added!"
+  fi
+}
+
+UpdateRepository() {
+  old_sum=$(cat $input | md5)
+  new_sum=$(cat ~/$input | md5)
+
+  if $FLAG_FORCE || [ "$old_sum" != "$new_sum" ]; then
+    if $FLAG_VERBOSE; then
+      if [ "$old_sum" != "$new_sum" ]; then
+        echo "Files have different checksum!"
+        echo ":::CHECKSUM:::"
+        echo "Old: $old_sum | New: $new_sum"
+        echo
+      else
+        echo "Both files are the same"
+      fi
+    fi
+    Replace $input
   fi
 }
 
@@ -30,47 +59,14 @@ do
     f)
       FLAG_FORCE=true;;
     \?)
-      echo "Invalid option: -$OPTARG"
-      ;;
+      echo "Invalid option: -$OPTARG";;
   esac
 done
-
-AddNew() {
-  echo
-  echo "Checking dotfile $input"
-  if [ ! -f "$input" ]
-  then
-    echo "Adding new dotfile $input"
-    cp ~/$input .
-    echo "File sucessfully added!"
-  fi
-}
-
-UpdateRepository() {
-  old_sum=$(cat $input | md5)
-  new_sum=$(cat ~/$input | md5)
-
-  if $FLAG_FORCE || [ "$old_sum" != "$new_sum" ]
-  then
-
-    if $FLAG_VERBOSE; then
-      if [ "$old_sum" != "$new_sum" ]; then
-        echo "Files have different checksum!"
-        echo ":::CHECKSUM:::"
-        echo "Old: $old_sum | New: $new_sum"
-        echo ""
-      else
-        echo "Both files are the same"
-      fi
-    fi
-    Replace $input
-  fi
-}
 
 ## Run dotfiles
 while read input
 do
-
+  echo
   if $FLAG_INSTALL; then
     if $FLAG_FORCE || [ ! -f ~/$input ]; then
       echo "Installing ~/$input ..."
