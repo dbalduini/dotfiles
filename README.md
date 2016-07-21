@@ -26,7 +26,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
-## dotfiles tool
+## dotfiles.sh
 
 ### Installing
 
@@ -43,3 +43,5 @@ To keep these dotfiles up-to-date, run
 ```
 ./dotfiles.sh
 ```
+
+Don't forget to commit and push to git after updating.
