@@ -25,3 +25,21 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 git config --global core.excludesfile ~/.gitignore_global
 ```
+
+## dotfiles tool
+
+### Installing
+
+To install these dotfiles in your machine, run
+
+```
+./dotfiles.sh -i
+```
+
+### Updating
+
+To keep these dotfiles up-to-date, run
+
+```
+./dotfiles.sh
+```
