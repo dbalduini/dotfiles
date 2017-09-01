@@ -14,6 +14,15 @@ VIM - Vi IMproved 7.4 (2013 Aug 10, compiled Apr 15 2016 16:13:30)
 MacOS X (unix) version
 ```
 
+### MacVim (Opcional)
+
+```
+brew install macvim
+brew link macvim
+
+defaults write org.vim.MacVim MMZoomBoth 1
+```
+
 ## Install Vundle
 
 ```
