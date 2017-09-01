@@ -16,5 +16,23 @@ alias finder-off="defaults write com.apple.finder AppleShowAllFiles FALSE && kil
 
 # Workflow
 alias phantome2e='nightwatch --config tests/nightwatch/nightwatch.json --env phantomjs --skiptags remote,extra,compare_envs'
+alias chrome-e2e='nightwatch --config tests/nightwatch/nightwatch.json --env default --skiptags remote,extra,compare_envs'
+
+# Scripts
 alias compare-layouts='~/Scripts/compareLayouts.sh'
 alias compare-loadtime='~/Scripts/compareLoadtime.sh'
+alias compare-images='~/Scripts/compareImages.sh'
+
+alias lint='~/Scripts/lint.sh'
+alias sync-remotes='~/Scripts/sync_remotes.sh'
+
+# Git
+alias git-rm-orig='git st | grep  "\.orig$" | xargs rm'
+alias git-full='git fop && git rom && git pull'
+alias git-diff-jscs='jscs $(git diff master --name-only) --reporter=unix'
+
+# Tools
+alias ctags="`brew --prefix`/bin/ctags"
+alias prettyjson='python -m json.tool'
+alias npm-global='npm -g list --depth 0'
+

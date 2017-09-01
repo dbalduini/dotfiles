@@ -9,19 +9,26 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
-Plugin 'easymotion/vim-easymotion'
+Plugin 'ervandew/supertab'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'Raimondi/delimitMate'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+"Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-surround'
+
+" Web
+Plugin 'mattn/emmet-vim'
 
 " JS
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+
+" Go
+Plugin 'fatih/vim-go'
 
 " Colors
 Plugin 'dracula/vim'
@@ -44,7 +51,10 @@ set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
 
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+" autocmd
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType go set listchars=tab:\│\ ,trail:-,extends:>,precedes:<,nbsp:+
+au FileType go set tabstop=4
 
 " ========================================================================
 " Plugin setup
@@ -105,22 +115,27 @@ set nofoldenable
 " make "tab" insert indents instead of tabs at the beginning of a line
 set smarttab
 " autoindent with two spaces, always expand tabs
-set ai sw=2 sts=2 et
+set ai ts=2 sw=2 sts=2 expandtab
 " give us nice EOL (end of line) characters
 set list
-set listchars=tab:▸\ ,eol:¬,trail:·
+set listchars=tab:▸\ ,eol:¬,trail:•
 " don't wrap lines
 set nowrap
 " highlight search terms
 set hlsearch
 " show search matches as you type
 set incsearch
+" put swap files on the tmp folder
+set directory=/tmp
+" vim copies to os clipboard
+" set clipboard=unnamed
 
 " ========================================================================
 " Map Keys
 " ========================================================================
+" :help key-notation
 
-" change the mapleader from \ to ,
+" change the Leader from \ to ,
 let mapleader=","
 
 " Easy window navigation
@@ -130,7 +145,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " use tab for indentation, 8 spaces
-map <S-C-T> :set noet sts=0 sw=8 ts=8 listchars=tab:>-,eol:$<CR>
+"map <S-C-T> :set noet sts=0 sw=8 ts=8 listchars=tab:>-,eol:$<CR>
 " indent hole file
 map <C-I> gg=G<CR>
 " toogle listchars
@@ -141,3 +156,5 @@ nmap <leader>p :set paste!<CR>
 nmap <silent> ,se :Errors<CR>
 nmap <silent> ,sc :SyntasticCheck<CR>
 nmap <silent> ,sr :SyntasticReset<CR>
+" search the word under cursor on the project
+map <C-S-f> :grep <cword> *<CR>
