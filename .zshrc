@@ -4,6 +4,9 @@ export ZSH=/Users/dbalduini/.oh-my-zsh
 # want your terminal to support 256 color schemes? I do ...
 export TERM="xterm-256color"
 
+export CLICOLOR=1
+#export LSCOLORS=Fxexcxdxbxegedabagacad
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -78,6 +81,7 @@ export LC_ALL=en_US.UTF-8
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='mvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -93,3 +97,6 @@ export LC_ALL=en_US.UTF-8
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="vim ~/.oh-my-zsh"
+
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/zsh_autocomplete

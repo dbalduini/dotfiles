@@ -4,32 +4,14 @@ alias ll='ls -l'
 alias lt='tree -N -C --prune'
 
 # List Symbolic links
-alias sl="find .  -maxdepth 1 -type l -ls | awk '{ print \"\\033[35m\" \$11  \"\033[0m\" \" \"  \$12 \" \" \$13  ;}'"
-
-# Hadoop
-alias hstart="/usr/local/Cellar/hadoop/2.7.1/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/start-yarn.sh"
-alias hstop="/usr/local/Cellar/hadoop/2.7.1/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.7.1/sbin/stop-dfs.sh"
+alias sl="find . -maxdepth 1 -type l -ls | awk '{ print \"\\033[35m\" \$11  \"\033[0m\" \" \"  \$12 \" \" \$13  ;}'"
 
 # Mac
-alias finder-on="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
-alias finder-off="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
-
-# Workflow
-alias phantome2e='nightwatch --config tests/nightwatch/nightwatch.json --env phantomjs --skiptags remote,extra,compare_envs'
-alias chrome-e2e='nightwatch --config tests/nightwatch/nightwatch.json --env default --skiptags remote,extra,compare_envs'
-
-# Scripts
-alias compare-layouts='~/Scripts/compareLayouts.sh'
-alias compare-loadtime='~/Scripts/compareLoadtime.sh'
-alias compare-images='~/Scripts/compareImages.sh'
-
-alias lint='~/Scripts/lint.sh'
-alias sync-remotes='~/Scripts/sync_remotes.sh'
+alias show-hidden-files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+alias hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 
 # Git
 alias git-rm-orig='git st | grep  "\.orig$" | xargs rm'
-alias git-full='git fop && git rom && git pull'
-alias git-diff-jscs='jscs $(git diff master --name-only) --reporter=unix'
 
 # Tools
 alias ctags="`brew --prefix`/bin/ctags"
