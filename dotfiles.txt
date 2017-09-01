@@ -3,3 +3,4 @@
 .gitignore_global
 .vimrc
 .zshrc
+.gvimrc
