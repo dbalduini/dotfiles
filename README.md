@@ -54,3 +54,7 @@ To keep these dotfiles up-to-date, run
 ```
 
 Don't forget to commit and push to git after updating.
+
+## Fonts
+
+Fire Code https://github.com/tonsky/FiraCode
